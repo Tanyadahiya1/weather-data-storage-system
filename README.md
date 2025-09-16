@@ -1,5 +1,7 @@
 
-#📑 Report: Weather Data Storage System
+📑 Report: Weather Data Storage System
+
+
 
 a. Weather Record ADT
 
@@ -10,6 +12,8 @@ Date: A string (e.g., "15/09/2025") or a custom structure (day/month/year).
 City: A string representing the city name (e.g., "London").
 
 Temperature: A floating-point number representing the recorded temperature.
+
+
 
 
 Methods
@@ -26,6 +30,8 @@ This ADT ensures modularity, allowing storage and retrieval of weather data in a
 
 ---
 
+
+
 b. Strategy for Memory Representation
 
 Weather data is stored in a 2D array where:
@@ -35,6 +41,8 @@ Rows = Years
 Columns = Cities
 
 Cell value = Temperature (or sentinel if missing)
+
+
 
 
 Row-Major Order
@@ -50,6 +58,8 @@ for year in years:
 Advantage: Better cache locality because elements of a row are stored contiguously in memory.
 
 Use Case: Efficient when analyzing year-wise trends across cities.
+
+
 
 
 Column-Major Order
@@ -72,6 +82,8 @@ Note: In Python, lists are row-major by default (like C), so row-wise access is 
 
 ---
 
+
+
 c. Approach to Handling Sparse Data
 
 Real-world weather datasets often contain missing values due to incomplete observations. To manage this, two approaches are considered:
@@ -81,6 +93,7 @@ Real-world weather datasets often contain missing values due to incomplete obser
 Store a placeholder (None or -9999) in the 2D array for missing data.
 
 Simple but wastes space if the dataset is sparse.
+
 
 
 
